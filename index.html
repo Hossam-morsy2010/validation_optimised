@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--bootstrap css file-->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!--font awesome css file-->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!--css main file-->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>validation</title>
+  </head>
+  <body>
+    <!--start form body-->
+    <section class="container">
+      <main class="row justify-content-center mt-5">
+        <div
+          class="col-md-8 text-center upper_row py-3 fw-bold text-capitalize fs-4 shadow-lg"
+        >
+          create account
+        </div>
+      </main>
+      <main class="row justify-content-center">
+        <div class="col-md-8">
+          <form action="home.html" onsubmit="return validation()">
+            <div class="row justify-content-center">
+              <!--form left column-->
+              <main class="row shadow-lg">
+                <div class="col">
+                  <!--start first name-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize fname_label"
+                    id="fname_label"
+                    >first name:</label
+                  >
+
+                  <input
+                    type="text"
+                    placeholder="enter your first name"
+                    class="form-control mb-3 fname_input"
+                    title="your first name should have alphabet characters."
+                    onfocusin="my_on_key(fname_label,'typing...')"
+                    onfocusout="my_up_key(fname_label,'First Name')"
+                  />
+                  <!--end first name-->
+                  <!--start email-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize email_label"
+                    id="email_label"
+                    >email:</label
+                  >
+
+                  <input
+                    type="text"
+                    placeholder="enter your email address"
+                    class="form-control mb-3 email_input"
+                    title="your email must contain @ and ."
+                    onfocusin="my_on_key(email_label,'typing...')"
+                    onfocusout="my_up_key(email_label,'Email')"
+                  />
+                  <!--end email-->
+                  <!--start password-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize pass_label"
+                    id="pass_label"
+                    >password:</label
+                  >
+
+                  <div class="input-group flex-nowrap">
+                    <input
+                      type="password"
+                      class="form-control pass_input"
+                      placeholder="enter your password"
+                      aria-label="Username"
+                      aria-describedby="addon-wrapping"
+                      title="your password must contain numbers and alphabet letters together"
+                      onfocusin="my_on_key(pass_label,'typing...')"
+                      onfocusout="my_up_key(pass_label,'Password')"
+                    />
+                    <span
+                      class="input-group-text pointer_cur1"
+                      id="addon-wrapping"
+                      ><i class="fa-solid fa-eye-slash"></i
+                    ></span>
+                  </div>
+                  <!--end password-->
+                  <!--start gender-->
+                  <label for="" class="text-capitalize gender_label"
+                    >gender:</label
+                  >
+
+                  <div class="form-check mt-3 mb-2">
+                    <input
+                      class="form-check-input male_check"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label
+                      class="form-check-label text-capitalize label_1 fw-semibold"
+                      for="flexRadioDefault1"
+                    >
+                      male
+                    </label>
+                  </div>
+                  <div class="form-check mt-3 mb-4">
+                    <input
+                      class="form-check-input female_check"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                    />
+                    <label
+                      class="form-check-label text-capitalize label_2 fw-semibold"
+                      for="flexRadioDefault2"
+                    >
+                      female
+                    </label>
+                  </div>
+                  <!--end gender-->
+                </div>
+
+                <!--form right column-->
+                <div class="col">
+                  <!--start last name-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize lname_label"
+                    id="lname_label"
+                    >last name:</label
+                  >
+
+                  <input
+                    type="text"
+                    placeholder="enter your last name"
+                    class="form-control mb-3 lname_input"
+                    title="your last name should have alphabet characters"
+                    onfocusin="my_on_key(lname_label,'typing...')"
+                    onfocusout="my_up_key(lname_label,'Last Name')"
+                  />
+                  <!--end last name-->
+                  <!--start phone number-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize phone_label"
+                    id="phone_label"
+                    >phone number:</label
+                  >
+
+                  <input
+                    type="text"
+                    placeholder="enter your phone number"
+                    class="form-control mb-3 phone_input"
+                    title="your phone number should be 11 digit numer and start with 01 like 01xxxxxxxxx"
+                    onfocusin="my_on_key(phone_label,'typing...')"
+                    onfocusout="my_up_key(phone_label,'Phone Number')"
+                  />
+                  <!--end phone number-->
+                  <!--start confirm password-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize confirm_label"
+                    id="confirm_label"
+                    >confirm password:</label
+                  >
+
+                  <div class="input-group flex-nowrap">
+                    <input
+                      type="password"
+                      class="form-control confirm_input"
+                      placeholder="re-enter your password"
+                      aria-label="Username1"
+                      aria-describedby="addon-wrapping"
+                      title="please confirm your password"
+                      onfocusin="my_on_key(confirm_label,'typing...')"
+                      onfocusout="my_up_key(confirm_label,'Confirm Password')"
+                    />
+                    <span
+                      class="input-group-text pointer_cur2"
+                      id="addon-wrapping"
+                      ><i class="fa-solid fa-eye-slash"></i
+                    ></span>
+                  </div>
+                  <!--end confirm password-->
+                  <!--start birthdate-->
+                  <label
+                    for=""
+                    class="mt-3 mb-2 text-capitalize birth_label"
+                    id="birth_label"
+                    >birthdate:</label
+                  >
+
+                  <input
+                    type="date"
+                    class="form-control mb-3 birth_input"
+                    value="mm/dd/yyyy"
+                    min="1975-01-01"
+                    max="2018-01-01"
+                  />
+                  <!--end birthdate-->
+                </div>
+                <main class="row">
+                  <div class="col">
+                    <!--start submit button-->
+                    <input
+                      class="btn btn-primary me-2 mb-4"
+                      type="submit"
+                      value="Submit"
+                    />
+                    <!--end submit button-->
+                    <!--start reset button-->
+                    <input
+                      class="btn btn-primary mb-4 reset_button"
+                      type="reset"
+                      value="Reset"
+                    />
+                    <!--end reset button-->
+                  </div>
+                </main>
+              </main>
+            </div>
+          </form>
+        </div>
+      </main>
+    </section>
+    <!--end form body-->
+
+    <!--bootstrap js files-->
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!--font awwesome js file-->
+    <script src="js/all.min.js"></script>
+    <!--js main file-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

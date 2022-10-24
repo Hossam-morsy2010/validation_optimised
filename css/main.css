@@ -1,0 +1,20 @@
+body{
+  min-height: 110vh;
+}
+.upper_row {
+  background-color: #1877F2;
+  color: white;
+}
+label:not(.label_1,.label_2){
+  color: #1877F2;
+  font-weight: 700;
+}
+.wrong{
+  color: red !important;
+}
+.typing {
+  color: rgb(66, 171, 66) !important;
+}
+.pointer_cur,.pointer_cur2 {
+  cursor: pointer;
+}
